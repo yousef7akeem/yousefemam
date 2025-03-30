@@ -1,0 +1,1001 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مركز الامام للحجامه النبويه</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
+        
+        :root {
+            --primary: #0a5c36;
+            --secondary: #f8b400;
+            --light: #f5f5f5;
+            --dark: #222;
+            --white: #fff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), #0a7c46);
+            color: var(--white);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-left: 10px;
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-right: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(10, 92, 54, 0.7), rgba(10, 92, 54, 0.7)), url('https://images.unsplash.com/photo-1581595219315-a187dd40c322?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 5%;
+            margin-top: 70px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .hero .hadith {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-right: 5px solid var(--secondary);
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(248, 180, 0, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(248, 180, 0, 0.6);
+        }
+        
+        /* About Section */
+        .section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            display: inline-block;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+            animation: fadeInLeft 1s ease;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        
+        .about-image {
+            flex: 1;
+            animation: fadeInRight 1s ease;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .about-image img:hover {
+            transform: scale(1.03);
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: #f9f9f9;
+        }
+        
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            animation: fadeInUp 0.5s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .service-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(rgba(10, 92, 54, 0.9), rgba(10, 92, 54, 0.9)), url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .testimonials .section-title h2 {
+            color: var(--white);
+        }
+        
+        .testimonials .section-title h2::after {
+            background-color: var(--secondary);
+        }
+        
+        .testimonial-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 2rem;
+            padding: 2rem 0;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .testimonial-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+        
+        .testimonial-card {
+            flex: 0 0 80%;
+            scroll-snap-align: start;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            animation: fadeIn 1s ease;
+        }
+        
+        .testimonial-card:first-child {
+            margin-right: 0;
+        }
+        
+        .testimonial-card:last-child {
+            margin-left: 0;
+        }
+        
+        .testimonial-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .client-info img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-left: 1rem;
+            border: 3px solid var(--secondary);
+        }
+        
+        .client-info h4 {
+            font-size: 1.2rem;
+        }
+        
+        .client-info span {
+            display: block;
+            font-size: 0.9rem;
+            color: #ddd;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+            animation: fadeInLeft 1s ease;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .contact-info p {
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-item i {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-left: 1rem;
+        }
+        
+        .contact-form {
+            flex: 1;
+            animation: fadeInRight 1s ease;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(10, 92, 54, 0.2);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 3rem 5%;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Floating Animation */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Pulse Animation */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .about-image,
+            .about-text,
+            .contact-info,
+            .contact-form {
+                width: 100%;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--primary);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            nav ul li {
+                margin: 1.5rem 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 3rem 5%;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .testimonial-card {
+                flex: 0 0 90%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 0.6rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .services-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                مركز الامام للحجامه النبويه <i class="fas fa-hand-holding-medical"></i>
+            </a>
+            
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">عن المركز</a></li>
+                    <li><a href="#services">خدماتنا</a></li>
+                    <li><a href="#testimonials">اراء العملاء</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="floating">مركز الامام للحجامه النبويه</h1>
+            <p>شفاء من كل داء كما ورد في السنة النبوية</p>
+            
+            <div class="hadith pulse">
+                <p>النبي صلى الله عليه وسلم قال رسول الله ﷺ</p>
+                <p>{من احتجم لسبع عشرة من الشهر، وتسع عشرة، وإحدى وعشرين، كان له شفاء من كلّ داء}</p>
+            </div>
+            
+            <a href="#contact" class="btn">احجز موعدك الآن</a>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="section-title">
+            <h2>عن مركزنا</h2>
+        </div>
+        
+        <div class="about-content">
+            <div class="about-text">
+                <h3>الحجامة النبوية الشريفة</h3>
+                <p>نحن في مركز الامام للحجامة النبوية نقدم العلاج بالحجامة كما ورد عن النبي صلى الله عليه وسلم، باستخدام أحدث الأساليب الطبية المعتمدة والمعقمة وفق أعلى معايير النظافة والسلامة.</p>
+                <p>الحجامة هي سنة نبوية وعلاج فعال للعديد من الأمراض، حيث تعمل على تنشيط الدورة الدموية وتخليص الجسم من الدم الفاسد والسموم المتراكمة.</p>
+                <a href="#services" class="btn">تعرف على خدماتنا</a>
+            </div>
+            
+            <div class="about-image">
+                <img src="https://scontent.fcai21-4.fna.fbcdn.net/v/t39.30808-6/486787829_122205610232268516_4608063370377216904_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=UsgQ8dQQLCoQ7kNvgHzWQuM&_nc_oc=Adn_rzT_5SgHTQorzyFomQgDZt5dfE-l51iWUMcqFt0SfzDrkOUDIt1Li7Nvl2W6dbg&_nc_zt=23&_nc_ht=scontent.fcai21-4.fna&_nc_gid=0CysaYiIGaSaSaOQ6stV0g&oh=00_AYGQ7xRCT6KsxVueUWW5JFdqRHmjGksIutNCN53WnBvmRQ&oe=67EEBBD8" alt="الحجامة النبوية">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="section-title">
+            <h2>خدماتنا</h2>
+        </div>
+        
+        <div class="services-container">
+            <div class="service-card">
+                <img src="https://scontent.fcai21-3.fna.fbcdn.net/v/t39.30808-6/482025062_122199812822268516_3456128355522312867_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=IhmDth7WXBsQ7kNvgE1drEL&_nc_oc=AdnuF2GXpzCsrKIpb5FCzPcNILlpZK3w8auy3q6w9_nYzRP2FCujIk-l_UFOJCXQjUI&_nc_zt=23&_nc_ht=scontent.fcai21-3.fna&_nc_gid=ONnAedqWHdAOYfRz9tGo7A&oh=00_AYFnr6usBoJqJS7SvwZZzJnIt18TeKPmxJi0poJdOXMUgg&oe=67EEC3F7" alt="الحجامة الجافة">
+                <div class="service-content">
+                    <h3>الحجامة الجافة</h3>
+                    <p>تستخدم لعلاج آلام الظهر والمفاصل والرقبة، حيث تعمل على تنشيط الدورة الدموية في المنطقة المصابة دون إخراج الدم.</p>
+                    <a href="#contact" class="btn">احجز الآن</a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <img src="https://scontent.fcai21-2.fna.fbcdn.net/v/t39.30808-6/480493863_122199580130268516_401436536495999292_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=8tGEOtJFcaoQ7kNvgEp3Roc&_nc_oc=Adn1dcn-b2H0MHWPS-rtebvRiQMUmMrrtSCBCn_4oCQWNVZaO0bCndYLE8TzcSTPJ6g&_nc_zt=23&_nc_ht=scontent.fcai21-2.fna&_nc_gid=6HKMrUUg8Fp8Vg9MZG0P0g&oh=00_AYFDlu3-hZPF4GMHuKEEqD9ni-YFLqrj8C6f7-_1yw2kyw&oe=67EEDCC2" alt="الحجامة الرطبة">
+                <div class="service-content">
+                    <h3>الحجامة الرطبة</h3>
+                    <p>تستخدم لإخراج الدم الفاسد من الجسم، وتعتبر علاجًا فعالًا للعديد من الأمراض مثل الصداع النصفي وارتفاع ضغط الدم.</p>
+                    <a href="#contact" class="btn">احجز الآن</a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <img src="https://scontent.fcai21-3.fna.fbcdn.net/v/t39.30808-6/482302913_3829104320736383_550809692707076749_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=-k3kd8VqJ_oQ7kNvgF7WfcB&_nc_oc=Adnl2i3O87C4fIC0yPuLGvFQiwTBBcjGeq71jUr4QH68A1B3LuXfwLewFtekWI2CQ-0&_nc_zt=23&_nc_ht=scontent.fcai21-3.fna&_nc_gid=R4PItyTET5beznfxc_Z9ow&oh=00_AYH7MC3PIQgNMl2KwbAodyhnTcgisnCZiwh4ZcQLgh1GtA&oe=67EEDF8C" alt="الحجامة الوقائية">
+                <div class="service-content">
+                    <h3>الحجامة الوقائية</h3>
+                    <p>تتم في الأوقات المستحبة (17، 19، 21 من الشهر الهجري) للوقاية من الأمراض وتعزيز الصحة العامة كما أوصى النبي صلى الله عليه وسلم.</p>
+                    <a href="#contact" class="btn">احجز الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+        <div class="section-title">
+            <h2>اراء عملائنا</h2>
+        </div>
+        
+        <div class="testimonial-container">
+            <div class="testimonial-card">
+                <p>"بفضل الله ثم الحجامة في هذا المركز تخلصت من آلام الظهر المزمنة التي عانيت منها لسنوات، شكرًا لفريق العمل المحترف."</p>
+                <div class="client-info">
+                    <div>
+                        <h4>أحمد محمد</h4>
+                        <span>مريض سابق</span>
+                    </div>
+                 
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p>"نصحني صديقي بزيارة المركز، وبعد جلسات الحجامة تحسنت حالتي الصحية كثيرًا، خاصة فيما يتعلق بضغط الدم والصداع."</p>
+                <div class="client-info">
+                    <div>
+                        <h4>ابراهيم علي</h4>
+                        <span>مريض سابق</span>
+                    </div>
+                   
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p>"أجريت الحجامة الوقائية كما أوصى النبي صلى الله عليه وسلم، وأشعر بنشاط وحيوية لم أكن أشعر بها من قبل، شكرًا لكم."</p>
+                <div class="client-info">
+                    <div>
+                        <h4>خالد عبدالله</h4>
+                        <span>مريض سابق</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="section-title">
+            <h2>اتصل بنا</h2>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>تواصل مع مركزنا</h3>
+                <p>يمكنك التواصل معنا لمعرفة المزيد عن خدماتنا أو لحجز موعد، فريقنا متاح للرد على استفساراتكم خلال ساعات العمل.</p>
+                
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>العنوان</h4>
+                        <p>مصر , الااقصر , مركز اسنا , بجوار شركه المياه</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <h4>الهاتف</h4>
+                        <p>+20 110 092 8791</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>البريد الإلكتروني</h4>
+                        <p>yy01100928791@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>ساعات العمل</h4>
+                        <p>من السبت إلى الخميس: 9 ص - 9 م</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">الاسم الكامل</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">نوع الخدمة المطلوبة</label>
+                        <select id="service" name="service" class="form-group input">
+                            <option value="dry">الحجامة الجافة</option>
+                            <option value="wet">الحجامة الرطبة</option>
+                            <option value="preventive">الحجامة الوقائية</option>
+                            <option value="consultation">استشارة طبية</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">الرسالة</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">إرسال الرسالة</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                مركز الامام للحجامه النبويه <i class="fas fa-hand-holding-medical"></i>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#home">الرئيسية</a>
+                <a href="#about">عن المركز</a>
+                <a href="#services">خدماتنا</a>
+                <a href="#testimonials">اراء العملاء</a>
+                <a href="#contact">اتصل بنا</a>
+            </div>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 مركز الامام للحجامه النبويه. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to a server
+            // For demonstration, we'll just show an alert
+            alert('تم إرسال رسالتك بنجاح! سنتصل بك قريبًا.');
+            contactForm.reset();
+        });
+        
+        // Animate elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.about-text, .about-image, .service-card, .contact-info, .contact-form');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateX(0)';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+        <!-- Previous HTML content -->
+    
+        <script>
+            // Simple form handling without PHP
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const service = document.getElementById('service').value;
+                
+                // Show confirmation
+                alert(`شكراً ${name}!\nتم استلام طلب حجزك لخدمة ${service}.\nسنتواصل معك قريباً لتأكيد الموعد.`);
+                
+                // Reset form
+                this.reset();
+            });
+            </script>
+        </body>
+        </html>
+</body>
+</html>
